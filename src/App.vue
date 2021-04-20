@@ -1,8 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <section
+    id="Main"
+    class="w-screen h-screen bg-main-background bg-center flex items-center justify-center"
+  >
+    <Container />
+  </section>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import Container from './components/Container.vue'
+export default {
+  name: 'App',
+  components: {
+    Container,
+  },
+}
 </script>
