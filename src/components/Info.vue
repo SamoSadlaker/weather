@@ -6,75 +6,44 @@
           ><box-icon color="white" class="align-middle" name="sun"></box-icon>
           Východ slnka:
         </strong>
-        NOPE
-      </li>
-      <li class="text-white my-5 text-xl">
-        <strong
-          ><box-icon
-            color="white"
-            class="align-middle"
-            name="cloud-rain"
-          ></box-icon>
-          Zrážky:
-        </strong>
-        NOPE
+        {{ this.getTime(info.sunrise) }}
       </li>
       <li class="text-white my-5 text-xl">
         <strong
           ><box-icon color="white" class="align-middle" name="bong"></box-icon>
           Vlhkosť:
         </strong>
-        NOPE
-      </li>
-      <li class="text-white my-5 text-xl">
-        <strong
-          ><box-icon color="white" class="align-middle" name="bulb"></box-icon>
-          UV:
-        </strong>
-        NOPE
-      </li>
-    </ul>
-    <ul class="">
-      <li class="text-white my-5 text-xl">
-        <strong
-          ><box-icon
-            color="white"
-            class="align-middle"
-            name="sun"
-            type="solid"
-          ></box-icon>
-          Západ slnka:
-        </strong>
-        NOPE
-      </li>
-      <li class="text-white my-5 text-xl">
-        <strong
-          ><box-icon
-            color="white"
-            class="align-middle"
-            name="low-vision"
-          ></box-icon>
-          Viditeľnosť:
-        </strong>
-        NOPE
+        {{ info.humidity }}
       </li>
       <li class="text-white my-5 text-xl">
         <strong
           ><box-icon color="white" class="align-middle" name="wind"></box-icon>
           Vietor:
         </strong>
-        NOPE
+        {{ info.wind }}
+      </li>
+    </ul>
+    <ul class="">
+      <li class="text-white my-5 text-xl">
+        <strong
+          ><box-icon color="white" class="align-middle" name="sun" type="solid"></box-icon>
+          Západ slnka:
+        </strong>
+        {{ this.getTime(info.sunset) }}
       </li>
       <li class="text-white my-5 text-xl">
         <strong
-          ><box-icon
-            color="white"
-            class="align-middle"
-            name="arrow-to-bottom"
-          ></box-icon>
+          ><box-icon color="white" class="align-middle" name="low-vision"></box-icon>
+          Viditeľnosť:
+        </strong>
+        {{ info.visibility }}
+      </li>
+      <li class="text-white my-5 text-xl">
+        <strong
+          ><box-icon color="white" class="align-middle" name="arrow-to-bottom"></box-icon>
           Tlak:
         </strong>
-        NOPE
+        {{ info.pressure }}
       </li>
     </ul>
   </div>
@@ -83,5 +52,17 @@
 <script>
 export default {
   name: 'Info',
+  props: {
+    info: {
+      type: Object,
+    },
+  },
+  methods: {
+    getTime(date) {
+      var time = new Date(date * 1000)
+
+      return time.getHours() + ':' + time.getMinutes()
+    },
+  },
 }
 </script>

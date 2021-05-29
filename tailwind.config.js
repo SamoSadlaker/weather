@@ -6,9 +6,6 @@ module.exports = {
       backgroundImage: (theme) => ({
         'main-background': 'url("/src/assets/images/background.png")',
       }),
-      width: {
-        card: '11em',
-      },
     },
   },
   variants: {
