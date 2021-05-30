@@ -1,5 +1,5 @@
 <template>
-  <ul class="w-full h-full flex flex-row items-center overflow-x-scroll overscroll-x-auto overflow-y-hidden px-6">
+  <ul class="flex flex-row items-center overflow-x-scroll overscroll-x-auto overflow-y-hidden px-6">
     <li v-for="(data, index) in list" :key="index" class="min-h-max min-w-max flex flex-col items-center rounded-xl box-border bg-gray-100 bg-opacity-5 backdrop-filter backdrop-blur-sm p-2 mx-4">
       <img :src="getImage(data.icon)" alt="" class="w-36" />
       <span class="text-white font-bold text-3xl">{{ data.temperature }}&#176;C</span>

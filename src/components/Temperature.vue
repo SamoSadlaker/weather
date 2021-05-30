@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="flex flex-row items-center p-5">
+  <div class="flex xl:flex-col xl:items-start sm:flex-col items-center justify-center flex-row">
+    <div class="flex flex-row items-center xl:p-5 p-1">
       <img class="w-48 h-auto" :src="getImage(temperature.icon)" alt="" />
 
       <div class="flex flex-col ml-2">
@@ -11,11 +11,11 @@
           <box-icon class="align-middle" color="white" name="down-arrow-alt" type="solid"></box-icon>
           {{ temperature.minTemp }}&#176;C
         </span>
+        <p class="ml-4 text-gray-50 font-medium">
+          {{ temperature.desc }}
+        </p>
       </div>
     </div>
-    <p class="mt-3 ml-6 text-gray-50 font-medium">
-      {{ temperature.desc }}
-    </p>
   </div>
 </template>
 

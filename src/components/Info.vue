@@ -13,14 +13,14 @@
           ><box-icon color="white" class="align-middle" name="bong"></box-icon>
           Vlhkosť:
         </strong>
-        {{ info.humidity }}
+        {{ info.humidity }}%
       </li>
       <li class="text-white my-5 text-xl">
         <strong
           ><box-icon color="white" class="align-middle" name="wind"></box-icon>
           Vietor:
         </strong>
-        {{ info.wind }}
+        {{ info.wind }}km/hod
       </li>
     </ul>
     <ul class="">
@@ -36,14 +36,14 @@
           ><box-icon color="white" class="align-middle" name="low-vision"></box-icon>
           Viditeľnosť:
         </strong>
-        {{ info.visibility }}
+        {{ this.getKilometers(info.visibility) }}km
       </li>
       <li class="text-white my-5 text-xl">
         <strong
           ><box-icon color="white" class="align-middle" name="arrow-to-bottom"></box-icon>
           Tlak:
         </strong>
-        {{ info.pressure }}
+        {{ info.pressure }}hPa
       </li>
     </ul>
   </div>
@@ -62,6 +62,9 @@ export default {
       var time = new Date(date * 1000)
 
       return time.getHours() + ':' + time.getMinutes()
+    },
+    getKilometers(meters) {
+      return (meters / 1000).toFixed(1)
     },
   },
 }
