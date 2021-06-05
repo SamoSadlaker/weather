@@ -65,18 +65,23 @@ export default {
       })
     },
     async getForecast() {
-      await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=48.4231&lon=18.6404&exclude=current,minutely,daily&appid=${this.APIKEY}&units=metric&lang=sk`).then((res) => {
-        var data = res.data.hourly
+      await axios
+        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=48.4231&lon=18.6404&exclude=current,minutely,daily&appid=${this.APIKEY}&units=metric&lang=sk`)
+        .then((res) => {
+          var data = res.data.hourly
 
-        data.forEach((item) => {
-          var info = {
-            icon: item.weather[0].icon,
-            temperature: item.temp.toFixed(1),
-            time: item.dt,
-          }
-          this.hours.push(info)
+          data.forEach((item) => {
+            var info = {
+              icon: item.weather[0].icon,
+              temperature: item.temp.toFixed(1),
+              time: item.dt,
+            }
+            this.hours.push(info)
+          })
         })
-      })
+        .catch((error) => {
+          this.$router.push('/error')
+        })
     },
   },
 }
