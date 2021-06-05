@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full h-full xl:w-11/12 xl:h-5/6 p-4 rounded-2xl grid xl:grid-rows-2 xl:grid-cols-2 grid-cols-1 grid-rows-4 shadow-md bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm">
+  <div class="w-full h-full xl:w-11/12 xl:h-5/6 p-4 rounded-2xl grid xl:grid-rows-2 xl:grid-cols-2 grid-cols-1 sm:grid-rows-4 grid-rows-3 shadow-md bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm">
     <Temperature v-bind:temperature="current" class="h-full w-full" />
     <Info v-bind:info="info" class="h-full w-full" />
-    <List v-bind:list="hours" class="h-full w-full xl:col-span-2 col-span-full row-span-2" />
+    <List v-bind:list="hours" class="h-full w-full xl:col-span-2 col-span-full sm:row-span-2 row-span-1" />
   </div>
 </template>
 

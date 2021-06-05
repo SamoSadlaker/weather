@@ -1,21 +1,21 @@
 <template>
-  <div class="flex flex-row items-center justify-around">
+  <div class="flex flex-col sm:flex-row items-center sm:justify-around justify-center">
     <ul class="">
-      <li class="text-white my-5 text-xl">
+      <li class="text-white sm:my-5 my-1 sm:text-xl text-md">
         <strong
           ><box-icon color="white" class="align-middle" name="sun"></box-icon>
           Východ slnka:
         </strong>
         {{ this.getTime(info.sunrise) }}
       </li>
-      <li class="text-white my-5 text-xl">
+      <li class="text-white sm:my-5 my-1 sm:text-xl text-md">
         <strong
           ><box-icon color="white" class="align-middle" name="bong"></box-icon>
           Vlhkosť:
         </strong>
         {{ info.humidity }}%
       </li>
-      <li class="text-white my-5 text-xl">
+      <li class="text-white sm:my-5 my-1 sm:text-xl text-md">
         <strong
           ><box-icon color="white" class="align-middle" name="wind"></box-icon>
           Vietor:
@@ -24,21 +24,21 @@
       </li>
     </ul>
     <ul class="">
-      <li class="text-white my-5 text-xl">
+      <li class="text-white sm:my-5 my-1 sm:text-xl text-md">
         <strong
           ><box-icon color="white" class="align-middle" name="sun" type="solid"></box-icon>
           Západ slnka:
         </strong>
         {{ this.getTime(info.sunset) }}
       </li>
-      <li class="text-white my-5 text-xl">
+      <li class="text-white sm:my-5 my-1 sm:text-xl text-md">
         <strong
           ><box-icon color="white" class="align-middle" name="low-vision"></box-icon>
           Viditeľnosť:
         </strong>
         {{ this.getKilometers(info.visibility) }}km
       </li>
-      <li class="text-white my-5 text-xl">
+      <li class="text-white sm:my-5 my-1 sm:text-xl text-md">
         <strong
           ><box-icon color="white" class="align-middle" name="arrow-to-bottom"></box-icon>
           Tlak:

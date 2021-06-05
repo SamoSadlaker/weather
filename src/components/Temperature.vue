@@ -1,10 +1,10 @@
 <template>
   <div class="flex xl:flex-col xl:items-start sm:flex-col items-center justify-center flex-row">
-    <div class="flex flex-row items-center xl:p-5 p-1">
-      <img class="w-48 h-auto" :src="getImage(temperature.icon)" alt="" />
+    <div class="flex sm:flex-row flex-col items-center xl:p-5 p-1">
+      <img class="sm:w-48 w-36 h-auto sm:m-0 -m-8" :src="getImage(temperature.icon)" alt="" />
 
       <div class="flex flex-col ml-2">
-        <span class="text-white font-bold text-7xl antialiased">{{ temperature.temperature }}&#176;C</span>
+        <span class="text-white font-bold sm:text-7xl text-5xl antialiased">{{ temperature.temperature }}&#176;C</span>
         <span class="ml-3 mt-2 text-white font-medium">
           <box-icon class="align-middle" color="white" type="solid" name="up-arrow-alt"></box-icon>
           {{ temperature.maxTemp }}&#176;C
