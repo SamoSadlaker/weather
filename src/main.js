@@ -3,4 +3,6 @@ import App from './App.vue'
 import 'boxicons'
 import './assets/css/style.css'
 
-createApp(App).mount('#app')
+import router from './router/index'
+
+createApp(App).use(router).mount('#app')
