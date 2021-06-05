@@ -5,12 +5,19 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    componet: Home,
+    component: Home,
   },
   {
     path: '/error',
     name: 'Error',
     component: Error,
+    props: { message: 'Something wrong with weather api.', backToHome: false },
+  },
+  {
+    path: '/404',
+    name: 'Error404',
+    component: Error,
+    props: { message: 'Page not found!', backToHome: true },
   },
 ]
 const router = createRouter({
