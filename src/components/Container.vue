@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full xl:w-11/12 p-4 rounded-2xl grid xl:grid-rows-2 xl:grid-cols-2 grid-cols-1 grid-rows-4 shadow-md bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm">
+  <div class="w-full h-full xl:w-11/12 xl:h-5/6 p-4 rounded-2xl grid xl:grid-rows-2 xl:grid-cols-2 grid-cols-1 grid-rows-4 shadow-md bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm">
     <Temperature v-bind:temperature="current" class="h-full w-full" />
     <Info v-bind:info="info" class="h-full w-full" />
     <List v-bind:list="hours" class="h-full w-full xl:col-span-2 col-span-full row-span-2" />
@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      APIKEY: 'aae7faf9421bf59b04f1efc5540a1465',
+      APIKEY: import.meta.env.VITE_API_KEY,
       current: {
         temperature: '',
         icon: '',
